@@ -1,0 +1,26 @@
+{
+  "name": "rivets-include",
+  "version": "0.0.1",
+  "authors": [
+    "Ondrej Brinkel <info@anzui.de>"
+  ],
+  "description": "rivets.js include binder\\nAllows asynchronous include of templates.",
+  "main": "rivets-include.js",
+  "keywords": [
+    "rivets",
+    "include",
+    "template"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/der-On/rivets-include",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "browser-request": "~0.2.1"
+  }
+}
