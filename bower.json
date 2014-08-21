@@ -4,7 +4,7 @@
   "authors": [
     "Ondrej Brinkel <info@anzui.de>"
   ],
-  "description": "rivets.js include binder\\nAllows asynchronous include of templates.",
+  "description": "rivets.js include binder\nAllows asynchronous include of templates.",
   "main": "rivets-include.js",
   "keywords": [
     "rivets",
