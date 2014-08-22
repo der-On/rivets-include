@@ -3,10 +3,10 @@
     'use strict';
     if (typeof exports === 'object') {
         // CommonJS
-        factory(require('rivets'), require('browser-request'));
+        factory(require('rivets'), require('superagent'));
     } else if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['rivets', 'browser-request'], factory);
+        define(['rivets', 'superagent'], factory);
     } else {
         // Browser globals
         factory(root.rivets, root.request);
@@ -52,7 +52,10 @@
 
                 request.get(path, onLoaded);
 
-                function onLoaded(err, response, body) {
+                function onLoaded(response) {
+                    var err = response.error;
+                    var body = response.text;
+
                     if (err) {
                         self.clear();
                         if (console) console.error(err);
@@ -77,8 +80,6 @@
                     childView = rivets.bind(child, models);
                 }
             };
-
-            this.load();
         },
         unbind: function(el) {
             this.clear();

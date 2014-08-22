@@ -1,6 +1,6 @@
 {
   "name": "rivets-include",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "authors": [
     "Ondrej Brinkel <info@anzui.de>"
   ],
@@ -21,6 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "browser-request": "~0.2.1"
+    "superagent": "~0.18.2"
   }
 }
