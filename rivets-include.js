@@ -68,7 +68,13 @@
                     child.className = 'rv-include';
                     child.innerHTML = html;
                     el.appendChild(child);
-                    childView = rivets.bind(child, view.models);
+
+                    // copy models into new view
+                    var models = {};
+                    for(var key in view.models) {
+                        models[key] = view.models[key];
+                    }
+                    childView = rivets.bind(child, models);
                 }
             };
 
