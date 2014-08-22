@@ -52,8 +52,7 @@
 
                 request.get(path, onLoaded);
 
-                function onLoaded(response) {
-                    var err = response.error;
+                function onLoaded(err, response) {
                     var body = response.text;
 
                     if (err) {
