@@ -24,6 +24,7 @@
       this.clear = function() {
         if (childView) {
           childView.unbind();
+          childView = null;
         }
 
         el.innerHTML = '';
@@ -32,15 +33,7 @@
       this.load = function(path) {
         this.clear();
 
-        switch(typeof(path)) {
-          case 'function': path = path(); break;
-          case 'undefined':
-            if ((keypath.startsWith("'") && keypath.endsWith("'")) ||
-                (keypath.startsWith('"') && keypath.endsWith('"'))) {
-              path = keypath.substring(1, keypath.length - 1);
-            }
-            break;
-        }
+        if (typeof path === 'function') path = path();
 
         if (!path) {
           return;
@@ -77,12 +70,13 @@
           for(var key in view.models) {
             models[key] = view.models[key];
           }
+
           childView = rivets.bind(child, models);
         }
       };
     },
     unbind: function(el) {
-      this.clear();
+      if (this.clear) this.clear();
     },
     routine: function(el, value) {
       this.load(value);
