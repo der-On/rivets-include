@@ -10,3 +10,5 @@ This binder allows inclusion of templates.
 ```
 
 It works with model properties or with strings (must be in quotes).
+
+Templates are loaded asynchronous and will be cached.
