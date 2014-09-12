@@ -15,7 +15,6 @@
   var cache = {};
 
   rivets.binders.include = {
-    block: true,
     bind: function(el) {
       var self = this;
 
@@ -69,8 +68,19 @@
           if (typeof self.view['options'] === 'function') {
             options = self.view.options();
           }
+          var els = Array.prototype.slice.call(el.childNodes);
+          self.nested = rivets.bind(els, models, options);
 
-          self.nested = rivets.bind(Array.prototype.slice.call(el.childNodes), models, options);
+          // dispatch include event
+          var event = new CustomEvent('include', {
+            detail: {
+              path: path
+            },
+            bubbles: true,
+            cancelable: true
+          });
+
+          el.dispatchEvent(event);
         }
       };
     },

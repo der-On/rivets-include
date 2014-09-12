@@ -9,3 +9,5 @@ This binder allows inclusion of templates.
 ```
 
 Templates are loaded asynchronous and will be cached.
+
+The element will dispatch an 'include' event once the template was loaded.
