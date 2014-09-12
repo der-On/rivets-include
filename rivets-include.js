@@ -15,16 +15,13 @@
   var cache = {};
 
   rivets.binders.include = {
+    block: true,
     bind: function(el) {
       var self = this;
-      var childView;
-      var keypath = this.keypath;
-      var view = this.view;
 
       this.clear = function() {
-        if (childView) {
-          childView.unbind();
-          childView = null;
+        if (this.nested) {
+          this.nested.unbind();
         }
 
         el.innerHTML = '';
@@ -60,18 +57,20 @@
         }
 
         function include(html) {
-          var child = document.createElement('div');
-          child.className = 'rv-include';
-          child.innerHTML = html;
-          el.appendChild(child);
+          el.innerHTML = html;
 
           // copy models into new view
           var models = {};
-          for(var key in view.models) {
-            models[key] = view.models[key];
+          for(var key in self.view.models) {
+            models[key] = self.view.models[key];
           }
 
-          childView = rivets.bind(child, models);
+          var options = {};
+          if (typeof self.view['options'] === 'function') {
+            options = self.view.options();
+          }
+
+          self.nested = rivets.bind(Array.prototype.slice.call(el.childNodes), models, options);
         }
       };
     },
