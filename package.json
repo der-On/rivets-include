@@ -1,0 +1,24 @@
+{
+  "name": "rivets-include",
+  "version": "0.0.9",
+  "description": "rivets.js include binder\nAllows asynchronous include of templates.",
+  "main": "rivets-include.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/der-On/rivets-include.git"
+  },
+  "keywords": [
+    "rivets",
+    "include",
+    "template"
+  ],
+  "author": "Ondrej Brinkel <info@anzui.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/der-On/rivets-include/issues"
+  },
+  "homepage": "https://github.com/der-On/rivets-include"
+}
