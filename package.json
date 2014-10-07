@@ -1,6 +1,6 @@
 {
   "name": "rivets-include",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "rivets.js include binder\nAllows asynchronous include of templates.",
   "main": "rivets-include.js",
   "scripts": {
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/der-On/rivets-include/issues"
   },
-  "homepage": "https://github.com/der-On/rivets-include"
+  "homepage": "https://github.com/der-On/rivets-include",
+  "dependencies": {
+    "superagent": "^0.20.0"
+  }
 }
