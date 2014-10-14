@@ -1,6 +1,6 @@
 {
   "name": "rivets-include",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "rivets.js include binder\nAllows asynchronous include of templates.",
   "main": "rivets-include.js",
   "scripts": {

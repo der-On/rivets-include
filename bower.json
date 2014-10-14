@@ -21,6 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "superagent": "~0.18.2"
+    "superagent": "0.18.2"
   }
 }
