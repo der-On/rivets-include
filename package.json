@@ -1,6 +1,6 @@
 {
   "name": "rivets-include",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "rivets.js include binder\nAllows asynchronous include of templates.",
   "main": "rivets-include.js",
   "scripts": {
@@ -15,7 +15,10 @@
     "include",
     "template"
   ],
-  "author": "Ondrej Brinkel <info@anzui.de>",
+  "author": {
+    "name": "Ondrej Brinkel",
+    "email": "info@anzui.de"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/der-On/rivets-include/issues"
@@ -23,5 +26,26 @@
   "homepage": "https://github.com/der-On/rivets-include",
   "dependencies": {
     "superagent": "0.18.2"
-  }
+  },
+  "gitHead": "33b2a2c34b9c538f2f8afc6760461db2b5541636",
+  "_id": "rivets-include@0.1.2",
+  "_shasum": "e887e8159e6998ce772679849fb3331fb0e6b220",
+  "_from": "rivets-include@",
+  "_npmVersion": "1.4.23",
+  "_npmUser": {
+    "name": "ondrej",
+    "email": "info@anzui.de"
+  },
+  "maintainers": [
+    {
+      "name": "ondrej",
+      "email": "info@anzui.de"
+    }
+  ],
+  "dist": {
+    "shasum": "e887e8159e6998ce772679849fb3331fb0e6b220",
+    "tarball": "http://registry.npmjs.org/rivets-include/-/rivets-include-0.1.2.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/rivets-include/-/rivets-include-0.1.2.tgz"
 }

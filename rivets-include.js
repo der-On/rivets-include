@@ -12,11 +12,14 @@
     factory(root.rivets, root.request);
   }
 })(this, function(rivets, request) {
-  var cache = {};
-
   rivets.binders.include = {
+    engines: {},
+    cache: {},
     bind: function(el) {
       var self = this;
+      var cache = rivets.binders.include.cache;
+
+      this.engine = el.getAttribute('engine') || null;
 
       this.clear = function() {
         if (this.nested) {
@@ -55,14 +58,24 @@
           cache[path] = body;
         }
 
-        function include(html) {
-          el.innerHTML = html;
+        function transformWithEngine(html, engine, models) {
+          var engines = rivets.binders.include.engines;
+          if (engine && engines[engine] && typeof engines[engine] === 'function') {
+            return engines[engine](html, models, path);
+          }
 
+          return html;
+        }
+
+        function include(html) {
           // copy models into new view
           var models = {};
-          for(var key in self.view.models) {
+          Object.keys(self.view.models).forEach(function(key) {
             models[key] = self.view.models[key];
-          }
+          });
+
+          // transform html with engine if any
+          el.innerHTML = transformWithEngine(html, self.engine, models);
 
           var options = {};
           if (typeof self.view['options'] === 'function') {
